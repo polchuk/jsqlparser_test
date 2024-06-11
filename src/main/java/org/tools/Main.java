@@ -16,9 +16,14 @@ public class Main {
 
         PlainSelect select = (PlainSelect) CCJSqlParserUtil.parse(query);
 
-        // dst_qs_period LIKE CONCAT('%', CONCAT('2024-01-01', '2024-03-31'))
         System.out.println(select.getWhere().toString());
+        // dst_qs_period LIKE CONCAT('%', CONCAT('2024-01-01', '2024-03-31'))
 
+        System.out.println(select.getSelectItems());
+        // [dst_qs_period, dst_metric_id, 'WHERE' AS literal]
+
+        System.out.println(select.getFromItem());
+        // mkt_dwh.qs_dynamic_score_targets
     }
 
 }
